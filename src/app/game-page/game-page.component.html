@@ -1,0 +1,18 @@
+<div class="container" id="container">
+  <h1 class="heading">Welcome to Tic Tac Toe</h1>
+  <p class="intro-text">
+    Please select the cell where your move is to be placed
+  </p>
+  <p id="userTypePara">{{userType}}</p>
+  <br />
+  <div id="responseTxt">{{responseTxt}}</div>
+  <p id="playersPara" *ngIf="playersParaDisplay === 'block'">
+    Not enough players joined, please wait
+  </p>
+  <div id="board"></div>
+  <button class="btn-submit" (click)="fetchHint()">Hint</button>
+  <div id="hint">{{hint}}</div>
+  <p id="gameStatus" *ngIf="gameStatusDisplay === 'block'">
+    {{responseTxt}}
+  </p>
+</div>

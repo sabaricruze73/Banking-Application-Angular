@@ -1,0 +1,40 @@
+<div class="login-container">
+  <h1 class="login-heading">Add money</h1>
+  <p class="login-intro-text">
+    Please provide the amount to be added along with the account number of the
+    user
+  </p>
+  <form
+    class="login-form-container"
+    id="form-container"
+    (ngSubmit)="submitForm()"
+  >
+    <label for="accountNumber">Enter the Account number</label>
+    <input
+      class="login-input-field"
+      type="text"
+      name="accountNumber"
+      id="accountNumber"
+      [(ngModel)]="accountNumber"
+      placeholder="Account number"
+      required
+    /><br />
+
+    <label for="amount">Enter the amount to be added</label>
+    <input
+      class="login-input-field"
+      type="text"
+      name="amount"
+      id="amount"
+      [(ngModel)]="amount"
+      placeholder="Amount"
+    /><br />
+
+    <input class="btn-submit" id="btn-submit" type="submit" value="Submit" />
+  </form>
+  <br />
+  <br />
+  <div id="div">
+    <p>{{ responseMessage }}</p>
+  </div>
+</div>

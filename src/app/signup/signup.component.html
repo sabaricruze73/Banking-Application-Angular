@@ -1,0 +1,141 @@
+<div class="container" id="container">
+  <h1 class="heading">Sign up</h1>
+  <p class="intro-text">Please provide the following details</p>
+
+  <form class="form-container" (ngSubmit)="signup()">
+    <label for="Name">Enter your name</label>
+    <input
+      class="input-field"
+      type="text"
+      name="Name"
+      id="Name"
+      [(ngModel)]="Name"
+      placeholder="Name"
+      required
+    /><br />
+    <label for="NickName">Enter your nick name</label>
+    <input
+      class="input-field"
+      type="text"
+      name="NickName"
+      id="NickName"
+      [(ngModel)]="NickName"
+      placeholder="Nick Name"
+      required
+    /><br />
+    <label for="DateofBirth">Enter your Date of Birth</label>
+    <input
+      class="input-field"
+      type="text"
+      name="DateofBirth"
+      id="DateofBirth"
+      [(ngModel)]="DateofBirth"
+      placeholder="DD-MM-YYYY"
+      required
+    /><br />
+    <label for="Aadhaar">Enter your Aadhaar number without space</label>
+    <input
+      class="input-field"
+      type="text"
+      name="Aadhaar"
+      id="Aadhaar"
+      [(ngModel)]="Aadhaar"
+      placeholder="Aadhaar"
+      required
+    /><br />
+    <label for="PanNumber">Enter your PAN number</label>
+    <input
+      class="input-field"
+      type="text"
+      name="PanNumber"
+      id="PanNumber"
+      [(ngModel)]="PanNumber"
+      placeholder="Pan"
+      required
+    /><br />
+    <label for="Number">Enter your Mobile number</label>
+    <input
+      class="input-field"
+      type="text"
+      name="Number"
+      id="Number"
+      [(ngModel)]="Number"
+      placeholder="Number"
+      required
+    /><br />
+    <label for="Address">Enter your Address</label>
+    <input
+      class="input-field"
+      type="text"
+      name="Address"
+      id="Address"
+      [(ngModel)]="Address"
+      placeholder="Address"
+      required
+    /><br />
+    <label>Enter the type of account</label><br />
+    <label
+      ><input
+        type="radio"
+        name="AccountType"
+        [(ngModel)]="AccountType"
+        value="Savings"
+      />Savings</label
+    >
+    <label
+      ><input
+        type="radio"
+        name="AccountType"
+        [(ngModel)]="AccountType"
+        value="Current"
+      />Current</label
+    ><br />
+    <label for="InitialBalance">Enter your initial balance</label>
+    <input
+      class="input-field"
+      type="text"
+      name="InitialBalance"
+      id="InitialBalance"
+      [(ngModel)]="InitialBalance"
+      placeholder="Initial Balance"
+      required
+    /><br />
+    <label for="NomineeName">Enter your nominee name</label>
+    <input
+      class="input-field"
+      type="text"
+      name="NomineeName"
+      id="NomineeName"
+      [(ngModel)]="NomineeName"
+      placeholder="Nominee Name"
+      required
+    /><br />
+    <label for="Username">Enter your User name</label>
+    <input
+      class="input-field"
+      type="text"
+      name="Username"
+      id="Username"
+      [(ngModel)]="Username"
+      placeholder="abc@gmail.com"
+      required
+    /><br />
+    <label for="Password">Enter your Password</label>
+    <input
+      class="input-field"
+      type="password"
+      name="Password"
+      id="Password"
+      [(ngModel)]="Password"
+      placeholder="Password"
+      required
+    /><br />
+
+    <input class="btn-submit" id="btn-submit" type="submit" value="Submit" />
+  </form>
+  <br />
+  <br />
+  <div id="div">
+    <p>{{ responseMessage }}</p>
+  </div>
+</div>

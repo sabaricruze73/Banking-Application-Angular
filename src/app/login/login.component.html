@@ -1,0 +1,57 @@
+<div class="login-container" id="login-container">
+  <h1 class="login-heading">Login</h1>
+  <p class="login-intro-text">Enter your login ID and password</p>
+  <form class="login-form-container" (ngSubmit)="submitForm()">
+    <label for="userName">User name</label>
+    <input
+      class="login-input-field"
+      type="email"
+      name="userName"
+      id="userName"
+      [(ngModel)]="userName"
+      placeholder="abc@gmail.com"
+      required
+    /><br />
+
+    <label for="password">Password</label>
+    <input
+      class="login-input-field"
+      type="password"
+      name="password"
+      id="password"
+      [(ngModel)]="password"
+      placeholder="Password"
+      required
+    />
+
+    <input class="btn-submit" type="submit" value="Login" />
+  </form>
+  <br />
+  <br />
+  <button class="btn-submit" (click)="triggerPasswordResetRequest()">
+    Forgot password
+  </button>
+  <br />
+  <div *ngIf="showForgetPasswordDiv" id="forgetPasswordDiv">
+    <label for="userNameChange">User name</label>
+    <input
+      class="login-input-field"
+      type="email"
+      name="userNameChange"
+      id="userNameChange"
+      [(ngModel)]="userNameChange"
+      placeholder="abc@gmail.com"
+      required
+    /><br />
+    <button
+      class="btn-submit"
+      id="forgetPasswordButton"
+      (click)="changePasswordRequest()"
+    >
+      Send forget password request
+    </button>
+  </div>
+  <div id="div">
+    <p>{{ responseMessage }}</p>
+  </div>
+</div>

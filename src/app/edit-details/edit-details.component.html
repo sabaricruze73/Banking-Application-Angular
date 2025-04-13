@@ -1,0 +1,89 @@
+<div class="login-container">
+  <h1 class="login-heading">Edit customer details</h1>
+  <p class="login-intro-text">
+    Please provide the details to be edited along with the User id
+  </p>
+
+  <form class="login-form-container" (ngSubmit)="updateDetails()">
+    <label for="userId">Enter the user ID</label>
+    <input
+      class="login-input-field"
+      type="text"
+      name="userId"
+      id="userId"
+      [(ngModel)]="userId"
+      placeholder="User ID"
+      required
+    /><br />
+
+    <label for="name">Name</label>
+    <input
+      class="login-input-field"
+      type="text"
+      name="name"
+      id="name"
+      [(ngModel)]="name"
+      placeholder="Name"
+    /><br />
+
+    <label for="dateOfBirth">Date of Birth</label>
+    <input
+      class="login-input-field"
+      type="text"
+      name="dateOfBirth"
+      id="dateOfBirth"
+      [(ngModel)]="dateOfBirth"
+      placeholder="DD-MM-YYYY"
+    /><br />
+
+    <label for="aadhaar">Aadhaar Number</label>
+    <input
+      class="login-input-field"
+      type="text"
+      name="aadhaar"
+      id="aadhaar"
+      [(ngModel)]="aadhaar"
+      placeholder="Aadhaar"
+    /><br />
+
+    <label for="panNumber">Pan Number</label>
+    <input
+      class="login-input-field"
+      type="text"
+      name="panNumber"
+      id="panNumber"
+      [(ngModel)]="panNumber"
+      placeholder="Pan Number"
+    /><br />
+
+    <label for="phoneNumber">Phone Number</label>
+    <input
+      class="login-input-field"
+      type="text"
+      name="phoneNumber"
+      id="phoneNumber"
+      [(ngModel)]="phoneNumber"
+      placeholder="Phone Number"
+    /><br />
+
+    <label for="address">Address</label>
+    <input
+      class="login-input-field"
+      type="text"
+      name="address"
+      id="address"
+      [(ngModel)]="address"
+      placeholder="Address"
+    /><br />
+
+    <input
+      class="btn-submit"
+      id="btn-submit"
+      type="submit"
+      value="Update changes"
+    />
+  </form>
+
+  <br /><br />
+  <div id="div">{{ responseMessage }}</div>
+</div>

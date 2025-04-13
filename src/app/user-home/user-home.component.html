@@ -1,0 +1,173 @@
+<div id="div">
+  <div class="container">
+    <div class="header">
+      <h1>Welcome to zoho banking</h1>
+    </div>
+
+    <div class="sidebar">
+      <button class="btn" (click)="viewDetails()">View details</button><br />
+      <button class="btn" (click)="fetchTransactions()">
+        View transactions</button
+      ><br />
+      <button
+        class="btn"
+        (click)="showComponent('addMoney')"
+        *ngIf="accountTypeButton"
+      >
+        Add Amount</button
+      ><br />
+      <button class="btn" (click)="requestForGame()">Request for game</button
+      ><br />
+      <button class="btn" (click)="fetchAddFriendDiv()">Add friend</button
+      ><br />
+      <button class="btn" (click)="fetchFriends()">Show friends</button><br />
+      <button class="btn" (click)="showFriendRequest()">
+        Show friend requests</button
+      ><br />
+      <button class="btn" (click)="viewMessages()">View messages</button><br />
+      <button class="btn" (click)="logout()">Log out</button><br />
+    </div>
+
+    <div class="content">
+      <div *ngIf="!activeComponent">
+        Your online Transactions are:
+        <span>{{
+          onlineTransactionStatus === "enabled" ? "Enabled" : "Disabled"
+        }}</span>
+        <div class="toggle-button-container">
+          <button
+            class="toggle-button"
+            (click)="changeOnlineTransactionStatus()"
+          >
+            {{ transactionStatus }}</button
+          ><br />
+        </div>
+        <div id="responseDiv">
+          <div *ngIf="addFriendShow">
+            <label for="addFriend">Enter the User name</label>
+            <input
+              class="input-field"
+              type="email"
+              id="addFriendName"
+              placeholder="User name"
+              required
+            /><br />
+            <button
+              class="btn-submit"
+              (click)="addFriend()"
+              *ngIf="addFriendButtonShow"
+            >
+              Add Friend</button
+            ><br /><br />
+          </div>
+          <div id="friendsDropDown" style="display: none"></div>
+
+          <div id="responseTxt">
+            <p>{{ responseMessage }}</p>
+          </div>
+        </div>
+        <button class="btn" style="display: none" id="mutualFriendsButton">
+          Show mutual friends
+        </button>
+        <button class="btn" style="display: none" id="chatButton">
+          Chat with friend
+        </button>
+
+        <div id="chatContainer" style="display: none">
+          <input
+            type="text"
+            [(ngModel)]="chatInput"
+            id="chatInput"
+            placeholder="Type your message"
+          />
+          <button
+            class="btn-submit"
+            id="submitChatButton"
+            (click)="submitChat()"
+          >
+            Submit
+          </button>
+        </div>
+        <div id="userDetailsDiv" style="display: none">
+          <div class="userDetails">
+            <span>Name</span> &nbsp;
+            <span id="Name">{{ Name }}</span>
+          </div>
+          <div class="userDetails">
+            <span>Nick Name</span> &nbsp;
+            <span id="NickName">{{ NickName }}</span>
+            <button id="change-nickname-btn" (click)="changeNickName()">
+              Change Nick Name
+            </button>
+          </div>
+          <div id="nickNameChangeDiv" style="display: none">
+            <form id="nickName-change-form" (ngSubmit)="submitNickName()">
+              <label for="NickNameInput">Enter your nick name</label>
+              <input
+                class="input-field"
+                type="text"
+                name="NickNameInput"
+                id="NickNameInput"
+                [(ngModel)]="NickNameInput"
+                placeholder="Nick Name"
+                required
+              /><br />
+              <input id="change-nickname-submit" type="submit" value="Submit" />
+            </form>
+          </div>
+          <div id="nickNameChangeSubmitDiv" style="display: none"></div>
+          <div class="userDetails">
+            <span>Date of birth</span> &nbsp;
+            <span id="DateOfBirth">{{ DateOfBirth }}</span>
+          </div>
+          <div class="userDetails">
+            <span>Aadhaar Number</span> &nbsp;
+            <span id="Aadhaar">{{ Aadhaar }}</span>
+          </div>
+          <br />
+          <div class="userDetails">
+            <span>Pan Number</span> &nbsp;
+            <span id="PanNumber">{{ PanNumber }}</span>
+          </div>
+          <br />
+          <div class="userDetails">
+            <span>Phone Number</span> &nbsp;
+            <span id="PhoneNumber">{{ PhoneNumber }}</span>
+          </div>
+          <br />
+          <div class="userDetails">
+            <span>Address</span> &nbsp;
+            <span id="Address">{{ Address }}</span>
+          </div>
+          <br />
+          <div class="userDetails">
+            <span>Nominee Name</span> &nbsp;
+            <span id="NomineeName">{{ NomineeName }}</span>
+          </div>
+          <br />
+          <div class="userDetails">
+            <span>Account Number</span> &nbsp;
+            <span id="AccountNumber">{{ AccountNumber }}</span>
+          </div>
+          <br />
+          <div class="userDetails">
+            <span>Account Type</span> &nbsp;
+            <span id="AccountType">{{ AccountType }}</span>
+          </div>
+          <br />
+          <div class="userDetails">
+            <span>Balance</span> &nbsp;
+            <span id="Balance">{{ Balance }}</span>
+          </div>
+          <div class="userDetails">
+            <span>Net Banking</span> &nbsp;
+            <span id="NetBanking">{{ NetBanking }}</span>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="activeComponent === 'addMoney'">
+        <app-add-money></app-add-money>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,70 @@
+<div id="div">
+  <div class="header">
+    <h1>Welcome, Admin</h1>
+  </div>
+
+  <div class="container">
+    <div class="sidebar">
+      <button class="btn" (click)="fetchCustomers()">List of Customers</button
+      ><br />
+      <button class="btn" (click)="showComponent('editDetails')">
+        Modify sensitive information of customer</button
+      ><br />
+      <button class="btn" (click)="fetchAllPasswordResetRequests()">
+        Forget password request acknowledgement</button
+      ><br />
+      <button class="btn" (click)="showComponent('addMoney')">Add money</button
+      ><br />
+      <button class="btn" (click)="fetchAlltransactions()">
+        View Transactions</button
+      ><br />
+      <button class="btn" (click)="fetchTransactionReportDiv()">
+        Generate report for Transactions</button
+      ><br />
+      <button class="btn" (click)="fetchPlayGameRequests()">
+        Play game request accept</button
+      ><br />
+      <button class="btn" (click)="logout()">Log out</button><br /><br />
+    </div>
+
+    <div id="content">
+      <div *ngIf="!activeComponent">
+        <div id="responseTxt"></div>
+        <div id="filterTransactionDiv"></div>
+        <div id="transactionReportDiv" style="display: none">
+          <label for="date">Select the date</label><br /><br />
+          <input
+            type="date"
+            name="date"
+            id="date"
+            [(ngModel)]="selectedDate"
+          /><br />
+          <button class="report-btn" (click)="fetchReport()">
+            Generate Report</button
+          ><br /><br />
+        </div>
+
+        <div id="filterTransactionInput" style="display: none">
+          <label for="NickNameInput">Enter the filter amount</label>
+          <input
+            class="login-input-field"
+            type="text"
+            name="transactionFilter"
+            id="transactionFilter"
+            placeholder="Amount"
+            required
+          /><br />
+          <button class="btn-submit" (click)="filterTransaction()">
+            Filter Transactions</button
+          ><br /><br />
+        </div>
+      </div>
+      <div *ngIf="activeComponent === 'editDetails'">
+        <app-edit-details></app-edit-details>
+      </div>
+      <div *ngIf="activeComponent === 'addMoney'">
+        <app-add-money></app-add-money>
+      </div>
+    </div>
+  </div>
+</div>
